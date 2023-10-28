@@ -30,20 +30,11 @@ function flatsome_breadcrumb( $class = '', $display = true ) {
  * Outputs the markup directly if no theme modification name has been
  * given. Else based on the return value of the mod.
  *
- * If a theme mod was given and will output, sticky mode gets set based on $name . '_mode' theme mod.
- *
  * @param string $name Theme modification name.
- * @param string $mode Sticky mode (css or javascript).
  */
-function flatsome_sticky_column_open( $name = '', $mode = '' ) {
+function flatsome_sticky_column_open( $name = '' ) {
 	if ( empty( $name ) || get_theme_mod( $name ) ) {
-		if ( ! empty( $name ) && empty( $mode ) ) {
-			$mode = get_theme_mod( $name . '_mode' );
-		}
-
-		echo sprintf( '<div class="is-sticky-column"%s>',
-			! empty( $mode ) ? " data-sticky-mode=\"{$mode}\"" : '' // phpcs:ignore WordPress.Security.EscapeOutput
-		);
+		echo '<div class="is-sticky-column">';
 		echo '<div class="is-sticky-column__inner">';
 	}
 }

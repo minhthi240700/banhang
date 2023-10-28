@@ -100,6 +100,7 @@ Flatsome_Option::add_field( 'option',  array(
 	),
 ));
 
+
 Flatsome_Option::add_field( 'option',  array(
 	'type'        => 'text',
 	'settings'     => 'follow_facebook',
@@ -107,6 +108,26 @@ Flatsome_Option::add_field( 'option',  array(
 	'transport' => $transport,
 	//'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
 	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
+	'section'     => 'follow',
+	'default'     => '',
+));
+
+Flatsome_Option::add_field( 'option',  array(
+	'type'        => 'text',
+	'settings'     => 'follow_twitter',
+	'label'       => __( 'Twitter', 'flatsome-admin' ),
+	'transport' => $transport,
+	//'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
+	'section'     => 'follow',
+	'default'     => '',
+));
+
+Flatsome_Option::add_field( 'option',  array(
+	'type'        => 'text',
+	'settings'     => 'follow_pinterest',
+	'label'       => __( 'Pinterest', 'flatsome-admin' ),
+	'transport' => $transport,
 	'section'     => 'follow',
 	'default'     => '',
 ));
@@ -133,12 +154,41 @@ Flatsome_Option::add_field( 'option', array(
 
 Flatsome_Option::add_field( 'option',  array(
 	'type'        => 'text',
-	'settings'     => 'follow_twitter',
-	'label'       => __( 'Twitter', 'flatsome-admin' ),
+	'settings'     => 'follow_linkedin',
+	'label'       => __( 'LinkedIn', 'flatsome-admin' ),
 	'transport' => $transport,
 	//'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
 	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
 	'section'     => 'follow',
+	'default'     => '',
+));
+
+Flatsome_Option::add_field( 'option',  array(
+	'type'        => 'text',
+	'settings'     => 'follow_youtube',
+	'label'       => __( 'YouTube', 'flatsome-admin' ),
+	'transport' => $transport,
+	//'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
+	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
+	'section'     => 'follow',
+	'default'     => '',
+));
+
+Flatsome_Option::add_field( 'option',  array(
+	'type'        => 'text',
+	'settings'     => 'follow_vk',
+	'label'       => __( 'VKontakte', 'flatsome-admin' ),
+	'section'     => 'follow',
+	'transport' => $transport,
+	'default'     => '',
+));
+
+Flatsome_Option::add_field( 'option',  array(
+	'type'        => 'text',
+	'settings'     => 'follow_flickr',
+	'label'       => __( 'Flickr', 'flatsome-admin' ),
+	'section'     => 'follow',
+	'transport' => $transport,
 	'default'     => '',
 ));
 
@@ -162,15 +212,6 @@ Flatsome_Option::add_field( 'option',  array(
 
 Flatsome_Option::add_field( 'option',  array(
 	'type'        => 'text',
-	'settings'     => 'follow_pinterest',
-	'label'       => __( 'Pinterest', 'flatsome-admin' ),
-	'transport' => $transport,
-	'section'     => 'follow',
-	'default'     => '',
-));
-
-Flatsome_Option::add_field( 'option',  array(
-	'type'        => 'text',
 	'settings'     => 'follow_rss',
 	'label'       => __( 'RSS', 'flatsome-admin' ),
 	'section'     => 'follow',
@@ -180,48 +221,8 @@ Flatsome_Option::add_field( 'option',  array(
 
 Flatsome_Option::add_field( 'option',  array(
 	'type'        => 'text',
-	'settings'     => 'follow_linkedin',
-	'label'       => __( 'LinkedIn', 'flatsome-admin' ),
-	'transport' => $transport,
-	//'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
-	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
-	'section'     => 'follow',
-	'default'     => '',
-));
-
-Flatsome_Option::add_field( 'option',  array(
-	'type'        => 'text',
-	'settings'     => 'follow_youtube',
-	'label'       => __( 'YouTube', 'flatsome-admin' ),
-	'transport' => $transport,
-	//'description' => __( 'Add Any HTML or Shortcode here...', 'flatsome-admin' ),
-	//'help'        => __( 'This is some extra help. You can use this to add some additional instructions for users. The main description should go in the "description" of the field, this is only to be used for help tips.', 'flatsome-admin' ),
-	'section'     => 'follow',
-	'default'     => '',
-));
-
-Flatsome_Option::add_field( 'option',  array(
-	'type'        => 'text',
-	'settings'     => 'follow_flickr',
-	'label'       => __( 'Flickr', 'flatsome-admin' ),
-	'section'     => 'follow',
-	'transport' => $transport,
-	'default'     => '',
-));
-
-Flatsome_Option::add_field( 'option',  array(
-	'type'        => 'text',
 	'settings'     => 'follow_500px',
 	'label'       => __( '500px', 'flatsome-admin' ),
-	'section'     => 'follow',
-	'transport' => $transport,
-	'default'     => '',
-));
-
-Flatsome_Option::add_field( 'option',  array(
-	'type'        => 'text',
-	'settings'     => 'follow_vk',
-	'label'       => __( 'VKontakte', 'flatsome-admin' ),
 	'section'     => 'follow',
 	'transport' => $transport,
 	'default'     => '',

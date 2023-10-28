@@ -67,10 +67,9 @@ $options = array(
     'ids' => array(
         'type' => 'select',
         'heading' => 'Ids',
-        'full_width' => true,
         'config' => array(
             'multiple' => true,
-            'placeholder' => 'Select...',
+            'placeholder' => 'Select..',
             'postSelect' => array(
                 'post_type' => array( 'featured_item' )
             ),
@@ -81,9 +80,8 @@ $options = array(
         'type' => 'select',
         'heading' => 'Category',
         'conditions' => 'ids == ""',
-        'full_width' => true,
         'config' => array(
-            'placeholder' => 'Select...',
+            'placeholder' => 'Select..',
             'termSelect' => array(
                 'post_type' => 'featured_item',
                 'taxonomies' => 'featured_item_category'

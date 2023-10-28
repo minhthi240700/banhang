@@ -237,13 +237,12 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 
 		?><div class="col <?php echo implode(' ', $col_class); ?>" <?php echo $animate;?>>
 			<div class="col-inner">
+			<a href="<?php the_permalink() ?>" class="plain">
 				<div class="box <?php echo $classes_box; ?> box-blog-post has-hover">
           <?php if(has_post_thumbnail()) { ?>
   					<div class="box-image" <?php echo get_shortcode_inline_css($css_args_img); ?>>
   						<div class="<?php echo $classes_image; ?>" <?php echo get_shortcode_inline_css($css_image_height); ?>>
-							<a href="<?php the_permalink() ?>" class="plain" aria-label="<?php echo esc_attr( the_title() ); ?>">
-								<?php the_post_thumbnail( $image_size ); ?>
-							</a>
+  							<?php the_post_thumbnail($image_size); ?>
   							<?php if($image_overlay){ ?><div class="overlay" style="background-color: <?php echo $image_overlay;?>"></div><?php } ?>
   							<?php if($style == 'shade'){ ?><div class="shade"></div><?php } ?>
   						</div>
@@ -270,9 +269,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 					?>
 					</p>
 					<?php } ?>
-					<h5 class="post-title is-<?php echo $title_size; ?> <?php echo $title_style;?>">
-						<a href="<?php the_permalink() ?>" class="plain"><?php the_title(); ?></a>
-					</h5>
+					<h5 class="post-title is-<?php echo $title_size; ?> <?php echo $title_style;?>"><?php the_title(); ?></h5>
 					<?php if((!has_post_thumbnail() && $show_date !== 'false') || $show_date == 'text') {?><div class="post-meta is-small op-8"><?php echo get_the_date(); ?></div><?php } ?>
 					<div class="is-divider"></div>
 					<?php if($show_excerpt !== 'false') { ?>
@@ -287,7 +284,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
                         <p class="from_the_blog_comments uppercase is-xsmall">
                             <?php
                                 $comments_number = get_comments_number( get_the_ID() );
-                            	/* translators: %s: Comment count */
+                            	/* translators: %s: comment count */
                                 printf( _n( '%s Comment', '%s Comments', $comments_number, 'flatsome' ),
                                     number_format_i18n( $comments_number ) )
                             ?>
@@ -295,9 +292,9 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
                     <?php } ?>
 
 					<?php if($readmore) { ?>
-						<a href="<?php echo get_the_permalink(); ?>" class="button <?php echo $readmore_color; ?> is-<?php echo $readmore_style; ?> is-<?php echo $readmore_size; ?> mb-0">
+						<button href="<?php echo get_the_permalink(); ?>" class="button <?php echo $readmore_color; ?> is-<?php echo $readmore_style; ?> is-<?php echo $readmore_size; ?> mb-0">
 							<?php echo $readmore ;?>
-						</a>
+						</button>
 					<?php } ?>
 
 					<?php do_action('flatsome_blog_post_after'); ?>
@@ -314,6 +311,7 @@ while ( $recentPosts->have_posts() ) : $recentPosts->the_post();
 						</div>
 					<?php } ?>
 				</div>
+				</a>
 			</div>
 		</div><?php endwhile;
 wp_reset_query();

@@ -13,7 +13,6 @@ return array(
         'type' => 'select',
         'heading' => 'Custom Posts',
         'param_name' => 'ids',
-		'full_width' => true,
         'config' => array(
             'multiple' => true,
             'placeholder' => 'Select..',
@@ -27,7 +26,6 @@ return array(
         'type' => 'select',
         'heading' => 'Category',
         'param_name' => 'cat',
-		'full_width' => true,
         'conditions' => 'ids == ""',
         'default' => '',
         'config' => array(
@@ -86,7 +84,6 @@ return array(
 	    'type'       => 'select',
 	    'heading'    => 'Tag',
 	    'conditions' => 'ids == ""',
-	    'full_width' => true,
 	    'default'    => '',
 	    'config'     => array(
 		    'multiple'    => true,

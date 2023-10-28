@@ -134,7 +134,7 @@ function ux_builder_parse_value( $value, $use_indexes = false ) {
  */
 function ux_builder_process_breakpoint_values( $values ) {
   for ( $i = count( $values ) - 1; $i > 0; $i-- ) {
-    if ( ! $values[$i - 1] && $values[$i - 1] !== '0' ) {
+    if ( ! $values[$i - 1] ) {
       $values[$i - 1] = $values[$i];
       unset( $values[$i] );
     }

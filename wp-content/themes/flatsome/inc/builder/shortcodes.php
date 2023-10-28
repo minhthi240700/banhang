@@ -54,7 +54,6 @@ require_once __DIR__ . '/shortcodes/ux_video.php';
 require_once __DIR__ . '/shortcodes/ux_sidebar.php';
 require_once __DIR__ . '/shortcodes/ux_nav.php';
 require_once __DIR__ . '/shortcodes/ux_stack.php';
-require_once __DIR__ . '/shortcodes/ux_lottie.php';
 
 if ( get_theme_mod( 'fl_portfolio', 1 ) ) {
 	require_once __DIR__ . '/shortcodes/ux_portfolio.php';
@@ -83,9 +82,8 @@ if ( class_exists( 'WooCommerce' ) ) {
 	$is_uxbuilder = isset( $_POST['ux_builder_action'] );
 	$is_rendering = $is_uxbuilder && $_POST['ux_builder_action'] == 'do_shortcode';
 	$is_saving    = isset( $_POST['action'] ) && $_POST['action'] == 'ux_builder_save';
-	$is_copying_shortcode = isset( $_POST['action'] ) && $_POST['action'] == 'ux_builder_copy_as_shortcode';
 
-	if ( ( $is_product && flatsome_product_block( $post->ID ) ) || $is_rendering || $is_saving || $is_copying_shortcode ) {
+	if ( ( $is_product && flatsome_product_block( $post->ID ) ) || $is_rendering || $is_saving ) {
 		require_once __DIR__ . '/shortcodes/custom-product.php';
 	}
 }

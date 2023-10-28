@@ -57,7 +57,6 @@ $options['post_options']['options']['tags'] = array(
   'type' => 'select',
   'heading' => 'Tag',
   'conditions' => 'ids == ""',
-  'full_width' => true,
   'default' => '',
   'config' => array(
 	  'multiple' => true,

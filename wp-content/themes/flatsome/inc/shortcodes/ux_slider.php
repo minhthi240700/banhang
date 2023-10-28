@@ -15,8 +15,6 @@ function shortcode_ux_slider($atts, $content=null) {
         'slide_align' => 'center',
         'style' => 'normal',
         'slide_width' => '',
-        'slide_width__md' => null,
-        'slide_width__sm' => null,
         'arrows' => 'true',
         'pause_hover' => 'true',
         'hide_nav' => '',
@@ -102,14 +100,9 @@ function shortcode_ux_slider($atts, $content=null) {
 	);
 
 	$args = array(
-		'margin'      => array(
+		'margin' => array(
 			'selector' => '',
 			'property' => 'margin-bottom',
-		),
-		'slide_width' => array(
-			'selector'  => '.flickity-slider > *',
-			'property'  => 'max-width',
-			'important' => true,
 		),
 	);
 ?>
@@ -141,6 +134,11 @@ function shortcode_ux_slider($atts, $content=null) {
 
      <div class="loading-spin dark large centered"></div>
 
+     <?php if($slide_width) { ?>
+     <style>
+            #<?php echo $_id; ?> .flickity-slider > * { max-width: <?php echo $slide_width; ?> !important; }
+     </style>
+     <?php } ?>
 	<?php echo ux_builder_element_style_tag( $_id, $args, $atts ); ?>
 </div>
 

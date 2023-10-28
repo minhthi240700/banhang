@@ -60,6 +60,17 @@ class Variation_Images_Frontend {
 			variation_images()->version,
 			true
 		);
+
+		wp_localize_script(
+			'flatsome-variation-images-frontend',
+			'flatsome_variation_images_frontend',
+			array(
+				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+				'nonce'   => array(
+					'load_images' => wp_create_nonce( 'flatsome-variation-images-load-images' ),
+				),
+			)
+		);
 	}
 
 	/**
@@ -120,10 +131,16 @@ class Variation_Images_Frontend {
 	 * Load images frontend ajax.
 	 */
 	public function load_images_ajax() {
-		$variation_id = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : 0; // phpcs:ignore WordPress.Security.NonceVerification
+		if ( ! check_ajax_referer( 'flatsome-variation-images-load-images', 'nonce', false ) ) {
+			wp_send_json_error( array(
+				'message' => 'Invalid nonce',
+			) );
+		}
+
+		$variation_id = isset( $_POST['variation_id'] ) ? absint( $_POST['variation_id'] ) : 0;
 		$variation    = $variation_id ? wc_get_product( $variation_id ) : false;
 
-		if ( ! $variation || ! $variation->is_visible() ) {
+		if ( ! $variation ) {
 			wp_send_json_error();
 		}
 

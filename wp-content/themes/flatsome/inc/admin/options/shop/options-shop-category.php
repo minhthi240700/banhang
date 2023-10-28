@@ -74,35 +74,6 @@ Flatsome_Option::add_field( 'option', array(
 ) );
 
 Flatsome_Option::add_field( 'option', array(
-	'type'            => 'select',
-	'settings'        => 'category_sticky_sidebar_mode',
-	'label'           => __( 'Sticky mode', 'flatsome-admin' ),
-	'section'         => 'woocommerce_product_catalog',
-	'default'         => '',
-	'choices'         => array(
-		''           => __( 'CSS (native)', 'flatsome-admin' ),
-		'javascript' => __( 'JavaScript (enhanced)', 'flatsome-admin' ),
-	),
-	'active_callback' => array(
-		array(
-			'setting'  => 'category_sidebar',
-			'operator' => '!==',
-			'value'    => 'none',
-		),
-		array(
-			'setting'  => 'category_sidebar',
-			'operator' => '!==',
-			'value'    => 'off-canvas',
-		),
-		array(
-			'setting'  => 'category_sticky_sidebar',
-			'operator' => '==',
-			'value'    => true,
-		),
-	),
-) );
-
-Flatsome_Option::add_field( 'option', array(
 	'type'      => 'radio-image',
 	'settings'  => 'category_grid_style',
 	'label'     => __( 'List Style', 'flatsome-admin' ),
@@ -795,38 +766,13 @@ if ( get_theme_mod( 'swatches' ) ) :
 	Flatsome_Option::add_field( 'option', array(
 		'type'            => 'checkbox',
 		'settings'        => 'swatches_box_reset',
-		'label'           => __( 'Auto reset', 'flatsome-admin' ),
+		'label'           => __( 'Auto reset selection', 'flatsome-admin' ),
 		'section'         => 'woocommerce_product_catalog',
 		'active_callback' => array(
 			array(
 				'setting'  => 'swatches_box_attribute',
 				'operator' => '!=',
 				'value'    => '',
-			),
-		),
-		'default'         => 0,
-	) );
-
-	Flatsome_Option::add_field( 'option', array(
-		'type'            => 'checkbox',
-		'settings'        => 'swatches_box_reset_limited',
-		'label'           => __( 'Reset limited', 'flatsome-admin' ),
-		'section'         => 'woocommerce_product_catalog',
-		'active_callback' => array(
-			array(
-				'setting'  => 'swatches_box_attribute',
-				'operator' => '!=',
-				'value'    => '',
-			),
-			array(
-				'setting'  => 'swatches_box_layout',
-				'operator' => '==',
-				'value'    => 'limit',
-			),
-			array(
-				'setting'  => 'swatches_box_reset',
-				'operator' => '!=',
-				'value'    => 0,
 			),
 		),
 		'default'         => 0,

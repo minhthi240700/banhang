@@ -11,7 +11,6 @@ add_ux_builder_shortcode( 'text_box', array(
       'ux_breadcrumbs',
       'ux_the_title',
       'ux_image',
-      'ux_lottie',
       'ux_stack',
       'ux_html',
       'text',

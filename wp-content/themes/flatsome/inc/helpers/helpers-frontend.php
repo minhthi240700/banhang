@@ -21,23 +21,16 @@ function flatsome_template( $name, array $vars = array() ) {
 /**
  * Converts an array into html attributes.
  *
- * @param array $atts Attributes array.
- *
+ * @param  array  $atts
  * @return string
  */
 function flatsome_html_atts( array $atts ) {
-	$string = '';
-	foreach ( $atts as $key => $value ) {
-		if ( $value === null ) continue;
-		if ( is_array( $value ) ) $value = implode( ' ', $value );
-		if ( empty( $value ) ) {
-			$string .= "${key} ";
-			continue;
-		}
-		$string .= "${key}=\"${value}\" ";
-	}
-
-	return $string;
+  $string = '';
+  foreach ( $atts as $key => $value ) {
+    if ( is_array( $value ) ) $value = implode( ' ', $value );
+    $string .= "${key}=\"${value}\" ";
+  }
+  return $string;
 }
 
 /**

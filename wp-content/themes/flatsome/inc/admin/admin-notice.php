@@ -77,7 +77,7 @@ function flatsome_status_check_admin_notice() {
 				<?php esc_html_e( 'Flatsome', 'flatsome' ); ?>
 			</h3>
 			<p>
-				<?php /* translators: %1$s: Theme name, %2$s: The URL to the status page. */ ?>
+				<?php /* translators: %1$s theme name. %2$s the URL to the status page. */ ?>
 				<?php echo sprintf( __( '<strong>Your theme (%1$s) contains outdated copies of some Flatsome template files.</strong> These files may need updating to ensure they are compatible with the current version of Flatsome. Suggestions:', 'flatsome' ), esc_html( wp_get_theme()->name ) ); // phpcs:ignore WordPress.XSS.EscapeOutput.OutputNotEscaped ?>
 			</p>
 			<ol>
