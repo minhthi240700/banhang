@@ -213,82 +213,82 @@ function invert_formatted_sale_price( $price, $regular_price, $sale_price ) {
 }
 
 // THÊM THƯƠNG HIỆU
-function tb_product_brand_taxonomy() {
+// function tb_product_brand_taxonomy() {
 
-    $labels = array(
-        'name'                       => _x( 'Thương hiệu', 'Taxonomy General Name', 'tb_product_brand' ),
-        'singular_name'              => _x( 'Product Brand', 'Taxonomy Singular Name', 'tb_product_brand' ),
-        'menu_name'                  => __( 'Thương hiệu', 'tb_product_brand' ),
-        'all_items'                  => __( 'Tất cả thương hiệu', 'tb_product_brand' ),
-        'parent_item'                => __( 'Parent Brand', 'tb_product_brand' ),
-        'parent_item_colon'          => __( 'Parent Brand:', 'tb_product_brand' ),
-        'new_item_name'              => __( 'New Item Brand', 'tb_product_brand' ),
-        'add_new_item'               => __( 'Add New Brand', 'tb_product_brand' ),
-        'edit_item'                  => __( 'Edit Brand', 'tb_product_brand' ),
-        'update_item'                => __( 'Update Brand', 'tb_product_brand' ),
-        'view_item'                  => __( 'View Brand', 'tb_product_brand' ),
-        'separate_items_with_commas' => __( 'Separate brands with commas', 'tb_product_brand' ),
-        'add_or_remove_items'        => __( 'Add or remove brands', 'tb_product_brand' ),
-        'choose_from_most_used'      => __( 'Choose from the most used', 'tb_product_brand' ),
-        'popular_items'              => __( 'Popular Brands', 'tb_product_brand' ),
-        'search_items'               => __( 'Search Brand', 'tb_product_brand' ),
-        'not_found'                  => __( 'Not Found', 'tb_product_brand' ),
-        'no_terms'                   => __( 'No brands', 'tb_product_brand' ),
-        'items_list'                 => __( 'Brandlist', 'tb_product_brand' ),
-        'items_list_navigation'      => __( 'Brand list navigation', 'tb_product_brand' ),
-    );
-    $rewrite = array(
-        'slug'                       => 'brand',
-        'with_front'                 => true,
-        'hierarchical'               => true,
-    );
-    $args = array(
-        'labels'                     => $labels,
-        'hierarchical'               => true,
-        'public'                     => true,
-        'show_ui'                    => true,
-        'show_admin_column'          => true,
-        'show_in_nav_menus'          => true,
-        'show_tagcloud'              => true,
-        'rewrite'                    => $rewrite,
-        'show_in_rest'               => true,
-    );
-    register_taxonomy( 'tb_product_brand', array( 'product' ), $args );
+//     $labels = array(
+//         'name'                       => _x( 'Thương hiệu', 'Taxonomy General Name', 'tb_product_brand' ),
+//         'singular_name'              => _x( 'Product Brand', 'Taxonomy Singular Name', 'tb_product_brand' ),
+//         'menu_name'                  => __( 'Thương hiệu', 'tb_product_brand' ),
+//         'all_items'                  => __( 'Tất cả thương hiệu', 'tb_product_brand' ),
+//         'parent_item'                => __( 'Parent Brand', 'tb_product_brand' ),
+//         'parent_item_colon'          => __( 'Parent Brand:', 'tb_product_brand' ),
+//         'new_item_name'              => __( 'New Item Brand', 'tb_product_brand' ),
+//         'add_new_item'               => __( 'Add New Brand', 'tb_product_brand' ),
+//         'edit_item'                  => __( 'Edit Brand', 'tb_product_brand' ),
+//         'update_item'                => __( 'Update Brand', 'tb_product_brand' ),
+//         'view_item'                  => __( 'View Brand', 'tb_product_brand' ),
+//         'separate_items_with_commas' => __( 'Separate brands with commas', 'tb_product_brand' ),
+//         'add_or_remove_items'        => __( 'Add or remove brands', 'tb_product_brand' ),
+//         'choose_from_most_used'      => __( 'Choose from the most used', 'tb_product_brand' ),
+//         'popular_items'              => __( 'Popular Brands', 'tb_product_brand' ),
+//         'search_items'               => __( 'Search Brand', 'tb_product_brand' ),
+//         'not_found'                  => __( 'Not Found', 'tb_product_brand' ),
+//         'no_terms'                   => __( 'No brands', 'tb_product_brand' ),
+//         'items_list'                 => __( 'Brandlist', 'tb_product_brand' ),
+//         'items_list_navigation'      => __( 'Brand list navigation', 'tb_product_brand' ),
+//     );
+//     $rewrite = array(
+//         'slug'                       => 'brand',
+//         'with_front'                 => true,
+//         'hierarchical'               => true,
+//     );
+//     $args = array(
+//         'labels'                     => $labels,
+//         'hierarchical'               => true,
+//         'public'                     => true,
+//         'show_ui'                    => true,
+//         'show_admin_column'          => true,
+//         'show_in_nav_menus'          => true,
+//         'show_tagcloud'              => true,
+//         'rewrite'                    => $rewrite,
+//         'show_in_rest'               => true,
+//     );
+//     register_taxonomy( 'tb_product_brand', array( 'product' ), $args );
 
-}
-add_action( 'init', 'tb_product_brand_taxonomy', 0 );
+// }
+// add_action( 'init', 'tb_product_brand_taxonomy', 0 );
 
-// HIỂN THỊ THƯƠNG HIỆU, SKU
+// // HIỂN THỊ THƯƠNG HIỆU, SKU
 
-function custom_show_brand_sku() {
-    global $product;
-    // Lấy tên thương hiệu
-    // Lấy ID của sản phẩm hiện tại
-    $product_id = get_the_ID();
+// function custom_show_brand_sku() {
+//     global $product;
+//     // Lấy tên thương hiệu
+//     // Lấy ID của sản phẩm hiện tại
+//     $product_id = get_the_ID();
 
-    // Lấy danh sách các thương hiệu của sản phẩm
-    $brands = get_the_terms($product_id, 'tb_product_brand');
+//     // Lấy danh sách các thương hiệu của sản phẩm
+//     $brands = get_the_terms($product_id, 'tb_product_brand');
 
-    // Khai báo biến để lưu tên thương hiệu và SKU
-    $brand_name = '';
-    $sku = '';
+//     // Khai báo biến để lưu tên thương hiệu và SKU
+//     $brand_name = '';
+//     $sku = '';
 
-    // Kiểm tra xem có thương hiệu nào được tìm thấy không
-    if ($brands && !is_wp_error($brands)) {
-        // Lặp qua từng thương hiệu và lấy giá trị thương hiệu
-        foreach ($brands as $brand) {
-            $brand_name = $brand->name;
-        }
-    }
+//     // Kiểm tra xem có thương hiệu nào được tìm thấy không
+//     if ($brands && !is_wp_error($brands)) {
+//         // Lặp qua từng thương hiệu và lấy giá trị thương hiệu
+//         foreach ($brands as $brand) {
+//             $brand_name = $brand->name;
+//         }
+//     }
 
-    // Tạo HTML để hiển thị thông tin thương hiệu và SKU
-    $output = '<div class="group-status">';
-    $output .= '<div class="first_status">Thương hiệu: <b class="status_name">' . ($brand_name != '' ? $brand_name : "Đang cập nhật") . '</b></div>';
-    $output .= '<div class="first_status first_status-sku">Mã sản phẩm: <b class="status_name product-sku">' . ($product->get_sku() != '' ? $product->get_sku() : "(Đang cập nhật...)") . '</b></div>';
-    $output .= '</div>';
+//     // Tạo HTML để hiển thị thông tin thương hiệu và SKU
+//     $output = '<div class="group-status">';
+//     $output .= '<div class="first_status">Thương hiệu: <b class="status_name">' . ($brand_name != '' ? $brand_name : "Đang cập nhật") . '</b></div>';
+//     $output .= '<div class="first_status first_status-sku">Mã sản phẩm: <b class="status_name product-sku">' . ($product->get_sku() != '' ? $product->get_sku() : "(Đang cập nhật...)") . '</b></div>';
+//     $output .= '</div>';
 
-    return $output;
-}
+//     return $output;
+// }
 
 add_shortcode('show_brand_sku', 'custom_show_brand_sku');
 
@@ -387,3 +387,203 @@ add_filter( 'excerpt_length', 'smile_prefix_excerpt_length' );
 function smile_prefix_excerpt_length() {
 	return 100;
 }
+class Auto_Save_Images{
+ 
+    function __construct(){     
+        
+        add_filter( 'content_save_pre',array($this,'post_save_images') ); 
+    }
+    
+    function post_save_images( $content ){
+        if( ($_POST['save'] || $_POST['publish'] )){
+            set_time_limit(240);
+            global $post;
+            $post_id=$post->ID;
+            $preg=preg_match_all('/<img.*?src="(.*?)"/',stripslashes($content),$matches);
+            if($preg){
+                foreach($matches[1] as $image_url){
+                    if(empty($image_url)) continue;
+                    $pos=strpos($image_url,$_SERVER['HTTP_HOST']);
+                    if($pos===false){
+                        $res=$this->save_images($image_url,$post_id);
+                        $replace=$res['url'];
+                        $content=str_replace($image_url,$replace,$content);
+                    }
+                }
+            }
+        }
+        remove_filter( 'content_save_pre', array( $this, 'post_save_images' ) );
+        return $content;
+    }
+    
+    function save_images($image_url,$post_id){
+        $file=file_get_contents($image_url);
+        $post = get_post($post_id);
+        $posttitle = $post->post_title;
+        $postname = sanitize_title($posttitle);
+        $im_name = "$postname-$post_id.jpg";
+        $res=wp_upload_bits($im_name,'',$file);
+        $this->insert_attachment($res['file'],$post_id);
+        return $res;
+    }
+    
+    function insert_attachment($file,$id){
+        $dirs=wp_upload_dir();
+        $filetype=wp_check_filetype($file);
+        $attachment=array(
+            'guid'=>$dirs['baseurl'].'/'._wp_relative_upload_path($file),
+            'post_mime_type'=>$filetype['type'],
+            'post_title'=>preg_replace('/\.[^.]+$/','',basename($file)),
+            'post_content'=>'',
+            'post_status'=>'inherit'
+        );
+        $attach_id=wp_insert_attachment($attachment,$file,$id);
+        $attach_data=wp_generate_attachment_metadata($attach_id,$file);
+        wp_update_attachment_metadata($attach_id,$attach_data);
+        return $attach_id;
+    }
+}
+new Auto_Save_Images();
+
+// Rút gọn mô tả sp
+add_action('wp_footer','devvn_readmore_flatsome');
+function devvn_readmore_flatsome(){
+    ?>
+<style>
+.single-product div#tab-description {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.fix_height {
+    max-height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+.single-product .tab-panels div#tab-description.panel:not(.active) {
+    height: 0 !important;
+}
+
+.devvn_readmore_flatsome {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+}
+
+.devvn_readmore_flatsome:before {
+    height: 55px;
+    margin-top: -45px;
+    content: "";
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff00', endColorstr='#ffffff', GradientType=0);
+    display: block;
+}
+
+.devvn_readmore_flatsome a {
+    color: #4d4d4d;
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 40px;
+    border: 1px solid #e5e5e5;
+    color: #4d4d4d;
+    font-size: 16px;
+}
+
+.devvn_readmore_flatsome a:after {
+    content: '';
+    width: 0;
+    right: 0;
+    border-top: 6px solid #4d4d4d;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 0 0 5px;
+}
+
+.devvn_readmore_flatsome a:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.devvn_readmore_flatsome a:hover:after {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.devvn_readmore_flatsome_less a:after {
+    border-top: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #4d4d4d;
+}
+
+.devvn_readmore_flatsome_less:before {
+    display: none;
+}
+</style>
+<script>
+(function($) {
+    $(window).on('load', function() {
+        if ($('.single-product div#tab-description').length > 0) {
+            let wrap = $('.single-product div#tab-description');
+            let current_height = wrap.height();
+            let your_height = 350;
+            if (current_height > your_height) {
+                wrap.addClass('fix_height');
+                wrap.append(function() {
+                    return '<div class="devvn_readmore_flatsome devvn_readmore_flatsome_more"><a title="Xem thêm" href="javascript:void(0);">Xem thêm</a></div>';
+                });
+                wrap.append(function() {
+                    return '<div class="devvn_readmore_flatsome devvn_readmore_flatsome_less" style="display: none;"><a title="Xem thêm" href="javascript:void(0);">Thu gọn</a></div>';
+                });
+                $('body').on('click', '.devvn_readmore_flatsome_more', function() {
+                    wrap.removeClass('fix_height');
+                    $('body .devvn_readmore_flatsome_more').hide();
+                    $('body .devvn_readmore_flatsome_less').show();
+                });
+                $('body').on('click', '.devvn_readmore_flatsome_less', function() {
+                    wrap.addClass('fix_height');
+                    $('body .devvn_readmore_flatsome_less').hide();
+                    $('body .devvn_readmore_flatsome_more').show();
+                });
+            }
+        }
+    });
+})(jQuery);
+</script>
+<?php
+}
+
+// HIỂN THỊ LƯỢT MUA
+function hien_thi_total_sale_sau_tieu_de_sp() {
+    global $product;
+    
+    // Kiểm tra nếu sản phẩm có custom field total_sale
+    if ($product && $product->get_id()) {
+        $total_sale = get_post_meta($product->get_id(), 'total_sale', true);
+        
+        if (!empty($total_sale)) {
+            ?>
+<div class="productcount">
+    <div class="countitem visible">
+        <span class="a-center"><?php echo $total_sale ?> Lượt mua</span>
+        <div class="countdown"></div>
+    </div>
+    <div class="sale-bar"></div>
+</div>
+<?php
+        }
+    }
+}
+
+add_action('woocommerce_shop_loop_item_title', 'hien_thi_total_sale_sau_tieu_de_sp', 10);

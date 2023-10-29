@@ -1,0 +1,4 @@
+2023-10-29T15:20:28+00:00 CRITICAL syntax error, unexpected '$date_string' (T_VARIABLE), expecting ';' or ',' in D:\Ampps\www\core-shop\wp-content\themes\flatsome-child\template-parts\posts\single.php on line 68
+
+2023-10-29T15:20:57+00:00 CRITICAL syntax error, unexpected '>' in D:\Ampps\www\core-shop\wp-content\themes\flatsome-child\template-parts\posts\single.php on line 67
+
